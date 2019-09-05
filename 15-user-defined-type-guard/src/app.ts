@@ -6,6 +6,9 @@ class Playlist {
   constructor(public name: string, public songs: Song[]) {}
 }
 
+// If true item is Song
+// Is only works if we return a boolean
+// This then returns type information
 function isSong(item: any): item is Song {
   return item instanceof Song;
 }

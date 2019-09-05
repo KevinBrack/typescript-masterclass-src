@@ -3,13 +3,18 @@ interface Person {
   age: number;
 }
 
-const person: Person = {
-  name: 'Todd',
-  age: 27,
+interface ReadonlyPerson {
+  readonly name: string;
+  readonly age: number;
+}
+
+const person: ReadonlyPerson = {
+  name: 'Kevin',
+  age: 38
 };
 
 type MyReadonly<T> = {
-  readonly [P in keyof T]: T[P]
+  readonly [P in keyof T]: T[P];
 };
 
 function freeze<T>(obj: T): MyReadonly<T> {
@@ -17,3 +22,4 @@ function freeze<T>(obj: T): MyReadonly<T> {
 }
 
 const newPerson = freeze(person);
+// newPerson.age = 100000; // Throws error

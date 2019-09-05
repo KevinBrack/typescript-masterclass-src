@@ -2,7 +2,7 @@
 const myObj = {
   myMethod() {
     console.log('Object:::', this);
-  },
+  }
 };
 // myObj.myMethod();
 
